@@ -1,0 +1,44 @@
+[
+    {
+      "id": 0,
+      "name": "Home",
+      "link": "/",
+      "element": "<Home />"
+    },
+    {
+      "id": 1,
+      "name": "Numeric Calculator",
+      "link": "/numeric-calculator",
+      "element": "<NumericCalculator />"
+    },
+    {
+      "id": 2,
+      "name": "Time Zone Convertor",
+      "link": "/time-zone-convertor",
+      "element": "<TimeZone />"
+    },
+    {
+      "id": 3,
+      "name": "TempConvertor",
+      "link": "/temp-convertor",
+      "element": "<TempConvertor />"
+    },
+    {
+      "id": 4,
+      "name": "Todo List",
+      "link": "/todo-list",
+      "element": "<TodoList />"
+    },
+    {
+      "id": 5,
+      "name": "Weight Convertor",
+      "link": "/weight-convertor",
+      "element": "<WeightConverter />"
+    },
+    {
+      "id": 6,
+      "name": "Tictactoe",
+      "link": "/tic-tac-toe",
+      "element": "<TicTacToe />"
+    }
+  ]
