@@ -6,7 +6,7 @@ import Products from "./../Products/Products";
 
 const URILinks = [
   {
-    path: "/dashboard",
+    path: "/",
     name: "Dashboard",
     component: Dashboard,
     icon: "Dashboard",
