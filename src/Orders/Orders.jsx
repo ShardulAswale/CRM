@@ -10,12 +10,34 @@ import Paper from "@mui/material/Paper";
 
 import { orders } from "../db.json";
 
+const PriorityEnum = {
+  Low: 1,
+  Medium: 2,
+  High: 3,
+  Urgent: 4,
+};
 // Define the descendingComparator function
 function descendingComparator(a, b, orderBy) {
-  if (b[orderBy] < a[orderBy]) {
+  let aValue = a[orderBy];
+  let bValue = b[orderBy];
+
+  // Extract numeric part of the ID for comparison
+  if (orderBy === "customerId" || orderBy === "productId") {
+    aValue = parseInt(aValue.substring(1));
+    bValue = parseInt(bValue.substring(1));
+    console.log(aValue, bValue);
+  }
+
+  if (orderBy === "priority") {
+    aValue = PriorityEnum[aValue];
+    bValue = PriorityEnum[bValue];
+    console.log(aValue, bValue);
+  }
+
+  if (bValue < aValue) {
     return -1;
   }
-  if (b[orderBy] > a[orderBy]) {
+  if (bValue > aValue) {
     return 1;
   }
   return 0;
@@ -57,7 +79,7 @@ const Orders = () => {
 
   return (
     <TableContainer component={Paper}>
-      <Table aria-label="order table">
+      <Table aria-label="orders table">
         <TableHead>
           <TableRow>
             <TableCell>
@@ -66,7 +88,7 @@ const Orders = () => {
                 direction={orderBy === "orderId" ? order : "asc"}
                 onClick={() => handleRequestSort("orderId")}
               >
-                Order ID
+                ID
               </TableSortLabel>
             </TableCell>
             <TableCell>
@@ -96,7 +118,15 @@ const Orders = () => {
                 Title
               </TableSortLabel>
             </TableCell>
-            <TableCell>Description</TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={orderBy === "description"}
+                direction={orderBy === "description" ? order : "asc"}
+                onClick={() => handleRequestSort("description")}
+              >
+                Description
+              </TableSortLabel>
+            </TableCell>
             <TableCell>
               <TableSortLabel
                 active={orderBy === "completed"}
@@ -115,7 +145,15 @@ const Orders = () => {
                 Priority
               </TableSortLabel>
             </TableCell>
-            <TableCell>Tags</TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={orderBy === "tags"}
+                direction={orderBy === "tags" ? order : "asc"}
+                onClick={() => handleRequestSort("tags")}
+              >
+                Tags
+              </TableSortLabel>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
