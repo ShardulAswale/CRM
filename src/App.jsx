@@ -1,5 +1,4 @@
-//import Layout from "./Navigation/Layout";
-import Layout from "./navigation/Layout";
+import Layout from "./Navigation/Layout";
 
 function App() {
   return (
