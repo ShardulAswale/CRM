@@ -1,7 +1,8 @@
-const Dashboard = () => {
-  return (
-    <div>Dashboard</div>
-  )
-}
+import Grid from "./Grid";
+import GridV2 from "./Grid_V2";
 
-export default Dashboard
+const Dashboard = () => {
+  return <GridV2 />;
+};
+
+export default Dashboard;

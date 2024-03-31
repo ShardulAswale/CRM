@@ -63,6 +63,7 @@ export default function Layout() {
           "& .MuiDrawer-paper": {
             width: open ? drawerWidthOpen : drawerWidthClosed,
             transition: `width ${transitionDuration}ms ease-in-out`,
+            overflow: "hidden",
           },
         }}
         open={open}
@@ -120,9 +121,18 @@ export default function Layout() {
           marginTop: "64px",
           // marginLeft: open ? `${drawerWidthOpen}px` : `${drawerWidthClosed}px`,
           transition: `margin-left ${transitionDuration}ms ease-in-out`,
+          // height: "calc(100vh - 64px)",
+          overflow: "auto",
         }}
       >
-        <Paper sx={{ flexGrow: 1, p: 2, height: "100%" }}>
+        <Paper
+          sx={{
+            flexGrow: 1,
+            p: 2,
+            height: "calc(100vh - 128px)",
+            overflow: "auto",
+          }}
+        >
           <NavRouter />
         </Paper>
       </Box>

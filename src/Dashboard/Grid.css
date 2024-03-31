@@ -1,0 +1,26 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Divide the container into 4 equal columns */
+    grid-auto-rows: 100px; /* Set the height of each row */
+    gap: 10px; /* Adjust the gap between grid items */
+  }
+  
+  .grid-point {
+    background-color: lightgray; /* Add background color for visual representation */
+    border: 1px solid #000; /* Add border for visual representation */
+  }
+  
+  .paper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Adjust the size of the paper container */
+    height: 80px; /* Adjust the size of the paper container */
+  }
+  
+  .paper-widget {
+    width: 100%; /* Adjust the size of the paper widget */
+    height: 100%; /* Adjust the size of the paper widget */
+    padding: 10px; /* Add padding for content */
+  }
+  
